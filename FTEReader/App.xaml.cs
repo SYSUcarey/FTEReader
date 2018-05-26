@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using FTEReader.DataBase;
 
 namespace FTEReader
 {
@@ -30,6 +31,7 @@ namespace FTEReader
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            BookDB.LoadDatabase();
         }
 
         /// <summary>
