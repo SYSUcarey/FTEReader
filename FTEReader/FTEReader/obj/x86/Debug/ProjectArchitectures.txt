@@ -1,1 +1,0 @@
-F:\Learning\VS\FTEReader\FTEReader\FTEReader.csproj;x86
