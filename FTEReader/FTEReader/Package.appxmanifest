@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="e6ed5237-1b0c-45c9-a5bd-7ef859bc0a6b"
-    Publisher="CN=MSI"
+    Name="51c5953e-2692-4faa-a8cc-8e2c3dc04c20"
+    Publisher="CN=chenbb"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="e6ed5237-1b0c-45c9-a5bd-7ef859bc0a6b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="51c5953e-2692-4faa-a8cc-8e2c3dc04c20" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>FTEReader</DisplayName>
-    <PublisherDisplayName>MSI</PublisherDisplayName>
+    <PublisherDisplayName>chenbb</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
