@@ -37,7 +37,7 @@ namespace FTEReader.DataBase
                 statement.Step();
             }
         }
-
+        //添加书本到书库
         public static void addToBookStore(string Title, string Catalog, string Tags, string Info, string Image)
         {
             using (var conn = new SQLiteConnection("BookDB.db"))
@@ -53,21 +53,33 @@ namespace FTEReader.DataBase
                 }
             }
         }
-
-        public static void addToBookShelf(string ID, string Title, string Pages)
+        //添加书本到书架
+        public static void addToBookShelf(string Id, string Title, string Pages)
         {
             using (var conn = new SQLiteConnection("BookDB.db"))
             {
-                using (var statement = conn.Prepare("INSERT INTO BookShelfTable (ID, Title, Pages) VALUES (?, ?, ?)"))
+                using (var statement = conn.Prepare("INSERT INTO BookShelfTable (Id, Title, Pages) VALUES (?, ?, ?)"))
                 {
-                    statement.Bind(1, ID);
+                    statement.Bind(1, Id);
                     statement.Bind(2, Title);
                     statement.Bind(3, Pages);
                     statement.Step();
                 }
             }
         }
-
+        //从书架中删除
+        public static void removeFromBookShelf(string Id)
+        {
+            using (var conn = new SQLiteConnection("BookDB.db"))
+            {
+                using (var statement = conn.Prepare("DELETE FROM BookShelfTable WHERE Id = ?"))
+                {
+                    statement.Bind(1, Id);
+                    statement.Step();
+                }
+            }
+        }
+        //获取书架中书本信息
         public static ObservableCollection<string[]> getBooksFromShelf()
         {
             ObservableCollection<string[]> books = new ObservableCollection<string[]>();
@@ -87,7 +99,7 @@ namespace FTEReader.DataBase
             }
             return books;
         }
-
+        //从书库中搜索满足条件的书本信息
         public static ObservableCollection<string[]> findBookFromStore(string input)
         {
             ObservableCollection<string[]> books = new ObservableCollection<string[]>();
@@ -102,10 +114,10 @@ namespace FTEReader.DataBase
                         string tags = (string)statement[2];
                         string info = (string)statement[3];
                         string image = (string)statement[4];
-                        if (title.Contains(input) || catalog.Contains(input) || tags.Contains(input) || info.Contains(input) || info.Contains(input))
+                        if (title.Contains(input) || catalog.Contains(input) || tags.Contains(input) || info.Contains(input))
                         {
                             string[] book = { title, catalog, tags, info, image };
-                            books.Add(book);
+                            if (!books.Contains(book)) books.Add(book);
                         }
                     }
                 }

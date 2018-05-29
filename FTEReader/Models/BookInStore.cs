@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace FTEReader.Models
 {
-    class BookItem
+    class BookInStore
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -19,20 +21,8 @@ namespace FTEReader.Models
             }
         }
 
-        private string id;
-
-        public string Id
-        {
-            get { return this.id; }
-            set
-            {
-                this.id = value;
-                NotifyPropertyChanged("Id");
-            }
-        }
 
         private string title;
-
         public string Title
         {
             get { return this.title; }
@@ -44,7 +34,6 @@ namespace FTEReader.Models
         }
 
         private string catalog;
-
         public string Catalog
         {
             get { return this.catalog; }
@@ -56,7 +45,6 @@ namespace FTEReader.Models
         }
 
         private string tags;
-
         public string Tags
         {
             get { return this.tags; }
@@ -68,7 +56,6 @@ namespace FTEReader.Models
         }
 
         private string info;
-
         public string Info
         {
             get { return this.info; }
@@ -77,10 +64,9 @@ namespace FTEReader.Models
                 this.info = value;
                 NotifyPropertyChanged("Info");
             }
-        }        
+        }
 
         private string image;
-
         public string Image
         {
             get { return this.image; }
@@ -91,41 +77,36 @@ namespace FTEReader.Models
             }
         }
 
-        private string pages;
-
-        public string Pages
+        private ImageSource source;
+        public ImageSource Source
         {
-            get { return this.pages; }
+            get { return this.source; }
             set
             {
-                this.pages = value;
-                NotifyPropertyChanged("Pages");
+                this.source = value;
+                NotifyPropertyChanged("Source");
             }
         }
 
-        public BookItem(string title, string pages)
+        public BookInStore(string title, string catalog, string tags, string info, string image)
         {
-            this.id = Guid.NewGuid().ToString();
-            this.title = title;
-            this.pages = "0";
-        }
-
-        public BookItem(string id, string title, string pages)
-        {
-            this.id = id;
-            this.title = title;
-            this.pages = "0";
-
-        }
-
-        public BookItem(string title, string catalog, string tags, string info, string image)
-        {
-            this.id = Guid.NewGuid().ToString();
             this.title = title;
             this.catalog = catalog;
             this.tags = tags;
             this.info = info;
-            this.image = image;            
+            this.image = image;
+
+            //解决无图片的问题？？尚未解决
+            if(image == "http://apis.juhe.cn/goodbook/img/68e52b5b4d6715947c73056c2c2e67a8.jpg")
+            {
+                this.source = new BitmapImage(new Uri("ms-appx:///Assets/default_book.png"));
+            }
+            else
+            {
+                BitmapImage bitmap = new BitmapImage(new Uri(image, UriKind.Absolute));
+                this.source = bitmap;
+            }
         }
     }
 }
+

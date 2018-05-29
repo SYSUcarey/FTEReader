@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:FTEReader"
     xmlns:cvt="using:FTEReader.Converter"
+    xmlns:models="using:FTEReader.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -23,15 +24,15 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
-                        <ListView x:Name="menu" Grid.Row="1">
+                        <ListView x:Name="menu" Grid.Row="1" IsItemClickEnabled="True" ItemClick="menu_ItemClick">
                             <ListViewItem>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel  Name="_shelf" Orientation="Horizontal">
                                     <SymbolIcon Symbol="Library"/>
                                     <TextBlock Text="书架" Margin="24, 0, 0, 0" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </ListViewItem>
                             <ListViewItem>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel  Name="_store" Orientation="Horizontal">
                                     <SymbolIcon Symbol="ViewAll"/>
                                     <TextBlock Text="书库" Margin="24, 0, 0, 0" VerticalAlignment="Center"/>
                                 </StackPanel>
@@ -40,11 +41,147 @@
                     </Grid>
                 </SplitView.Pane>
                 <!--内容-->
-                <Grid>
-                    <StackPanel>
-                        <TextBlock Name="number" Text="number" />
-                        <Button Name="button" Click="button_Click" Content="导入"/>
-                    </StackPanel>
+                <Grid x:Name="content">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" HorizontalAlignment="Center" Content="AddBookToShelf" Click="addShelf"/>
+                    <Grid x:Name="shelf" Grid.Row="1">
+                        <ScrollViewer>
+                            <ListView x:Name="BookStoreListView" IsItemClickEnabled="True" ItemsSource="{x:Bind bookInShelfViewModel.ShelfItems}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate x:DataType="models:BookInShelf">
+                                        <UserControl>
+                                            <Grid Height="200">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="150"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Grid.Column="0"/>
+                                                <StackPanel Grid.Column="1">
+                                                    <TextBlock Text="{x:Bind Title}"/>
+                                                    <TextBlock Text="{x:Bind Pages}"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </UserControl>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollViewer>
+                    </Grid>
+                    <Grid x:Name="types" Visibility="Collapsed" Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="150"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Name="人物传记" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png" Width="100" Height="100"/>
+                                <TextBlock Text="人物传记" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="中国文学" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="中国文学" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="外国文学" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="外国文学" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="儿童文学" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel Grid.Row="1" Grid.Column="0">
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="儿童文学" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="散文" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel Grid.Row="1" Grid.Column="1">
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="散文" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="经典名著" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel Grid.Row="1" Grid.Column="2">
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="经典名著" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="小说" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="小说" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="历史" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="历史" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="教育" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel Grid.Row="2" Grid.Column="2">
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="教育" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="成功励志" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="成功励志" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="心灵鸡汤" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="心灵鸡汤" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="心理学" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel Grid.Row="3" Grid.Column="2">
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="心理学" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="管理" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="管理" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="经济" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="经济" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="理财" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="理财" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Name="哲学" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Width="300" Height="200" Click="type_Click">
+                            <StackPanel>
+                                <Image Source="Assets/default_book.png"  Width="100" Height="100"/>
+                                <TextBlock Text="哲学" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
                 </Grid>
             </SplitView>
             <AppBarToggleButton x:Name="splitViewToggle" VerticalAlignment="Top" Width="48" Height="48" Icon="GlobalNavigationButton"/>
