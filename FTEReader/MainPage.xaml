@@ -45,10 +45,21 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Button Grid.Row="0" HorizontalAlignment="Center" Content="AddBookToShelf" Click="addShelf"/>
-                    <Grid x:Name="shelf" Grid.Row="1">
+                    <TextBlock Grid.Row="1" Name="number" HorizontalAlignment="Center" Text="number"/>
+                    <TextBlock Grid.Row="2" Name="booktitle" HorizontalAlignment="Center" Text="any data"/>
+                    <TextBlock Grid.Row="3" Name="introduction" HorizontalAlignment="Center" Text="any data"/>
+                    <TextBlock Grid.Row="4" Name="chaptertitle" HorizontalAlignment="Center" Text="any data"/>
+                    <TextBlock Grid.Row="5" Name="show" HorizontalAlignment="Center" Text="any data"/>
+
+                    <Grid x:Name="shelf" Grid.Row="3"><!--到时候回改为1-->
                         <ScrollViewer>
                             <ListView x:Name="BookStoreListView" IsItemClickEnabled="True" ItemsSource="{x:Bind bookInShelfViewModel.ShelfItems}">
                                 <ListView.ItemTemplate>

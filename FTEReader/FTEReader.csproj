@@ -111,7 +111,11 @@
     </Compile>
     <Compile Include="ViewModels\BookInShelfViewModels.cs" />
     <Compile Include="ViewModels\BookInStoreViewModels.cs" />
+    <Compile Include="WebRequest\BookDetail.cs" />
+    <Compile Include="WebRequest\Chapter.cs" />
+    <Compile Include="WebRequest\ChapterDetail.cs" />
     <Compile Include="WebRequest\GetBooks.cs" />
+    <Compile Include="WebRequest\GetNewBooks.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -163,7 +167,9 @@
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
