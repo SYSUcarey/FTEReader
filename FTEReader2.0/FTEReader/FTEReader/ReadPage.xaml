@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="FTEReader.ReadPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FTEReader"
+    xmlns:cvt="using:FTEReader.Converter"
+    xmlns:models="using:FTEReader.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <cvt:converter x:Key="NullableBooleanToBooleanKey"/>
+    </Page.Resources>
+
+    <Grid  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="globe">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStateMin400">
+                    <VisualState.Setters>
+                        <Setter Target="B1.(UIElement.Width)" Value="400"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="401"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateMin800">
+                    <VisualState.Setters>
+                        <Setter Target="B1.(UIElement.Width)" Value="800"/>
+                        <Setter Target="B1.(UIelement.FontSize)" Value="16"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="801"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <SplitView IsPaneOpen="{x:Bind splitViewToggle.IsChecked,Mode=TwoWay,Converter={StaticResource NullableBooleanToBooleanKey}}" PaneBackground="LightYellow" DisplayMode="CompactOverlay" OpenPaneLength="200" CompactPaneLength="60">
+            <SplitView.Pane>
+                <ListView IsItemClickEnabled="True" ItemsSource="{x:Bind chapters.ChapterItems}" ItemClick="ListView_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:ChapterItem">
+                            <UserControl>
+                                <Grid Height="50">
+                                    <TextBlock Text="{x:Bind Name}"/>
+                                </Grid>
+                            </UserControl>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView> 
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid x:Name="readGrid">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel>
+                            <TextBlock x:Name="B1" Text="Loading..." TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" TextTrimming="Clip" Height="844" Width="642" />
+                        </StackPanel>
+                    </ScrollViewer>
+                    <MediaElement  x:Name="media_element" AutoPlay="True" Volume="1.0"/>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+        <AppBarToggleButton x:Name="splitViewToggle" VerticalAlignment="Top" Width="60" Height="60" Icon="GlobalNavigationButton"/>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="preButton" Icon="Previous" Label="上一页" Click="preButton_Click"/>
+            <AppBarButton x:Name="playButton" Icon="Play" Label="语音播放" Click="playButton_Click"/>
+            <AppBarButton x:Name="nextButton" Icon="Next" Label="下一页" Click="nextButton_Click"/>
+            <AppBarButton x:Name="StopButton" Icon="Stop" Label="停止播放" Click="StopButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

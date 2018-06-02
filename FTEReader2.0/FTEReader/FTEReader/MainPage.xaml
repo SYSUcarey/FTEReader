@@ -1,0 +1,285 @@
+﻿<Page
+    x:Class="FTEReader.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FTEReader"
+    xmlns:cvt="using:FTEReader.Converter"
+    xmlns:models="using:FTEReader.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <cvt:converter x:Key="NullableBooleanToBooleanKey"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:Name="main_grid" Grid.Row="1">
+            <SplitView IsPaneOpen="{x:Bind splitViewToggle.IsChecked,Mode=TwoWay,Converter={StaticResource NullableBooleanToBooleanKey}}" PaneBackground="LightSkyBlue" DisplayMode="CompactInline" OpenPaneLength="150">
+                <!--菜单-->
+                <SplitView.Pane>
+                    <Grid x:Name="menu_grid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <ListView x:Name="menu" Grid.Row="1" IsItemClickEnabled="True" ItemClick="menu_ItemClick">
+                            <ListViewItem>
+                                <StackPanel Name="_shelf" Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Library"/>
+                                    <TextBlock Text="书架" Margin="24, 0, 0, 0" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem>
+                                <StackPanel Name="_store" Orientation="Horizontal">
+                                    <SymbolIcon Symbol="ViewAll"/>
+                                    <TextBlock Text="书库" Margin="24, 0, 0, 0" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </ListViewItem>
+                        </ListView>
+                    </Grid>
+                </SplitView.Pane>
+                <!--内容-->
+                <SplitView.Content>
+                    <ScrollViewer Height="800">
+                        <Grid x:Name="content" Height="1200">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Button x:Name="button" Grid.Row="0" HorizontalAlignment="Center" Content="添加到书架" Click="addShelf"/>
+                            <Grid x:Name="shelf" Grid.Row="1">
+                                <ListView x:Name="BookShelfListView" IsItemClickEnabled="True" ItemsSource="{x:Bind bookInShelfViewModel.ShelfItems}" ItemClick="read_Click">
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="ListViewItem">
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate x:DataType="models:BookInShelf">
+                                            <UserControl>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="150"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="50"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Image Grid.Column="0" Source="Assets/default_book.png" Width="90" Height="90"/>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="{x:Bind Title}"/>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="当前阅读页数："/>
+                                                            <TextBlock Text="{x:Bind Pages}"/>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                    <AppBarButton Grid.Column="2" IsCompact="True" Icon="Setting" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                        <AppBarButton.Flyout>
+                                                            <MenuFlyout>
+                                                                <MenuFlyoutItem Text="阅读" Click="MenuFlyoutItemRead_Click"/>
+                                                                <MenuFlyoutItem Text="删除" Click="MenuFlyoutItemDelete_Click"/>
+                                                                <MenuFlyoutItem Text="分享" Click="MenuFlyoutItemShare_Click"/>
+                                                            </MenuFlyout>
+                                                        </AppBarButton.Flyout>
+                                                    </AppBarButton>
+                                                </Grid>
+                                            </UserControl>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+                            <Viewbox>
+                                <Grid x:Name="types" Visibility="Collapsed" Grid.Row="2" HorizontalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid x:Name="maleGrid" Grid.Column="0" Margin="5">
+                                        <ListView>
+                                            <ListViewHeaderItem Background="LightSkyBlue" HorizontalAlignment="Center">
+                                                <TextBlock Text="男生"></TextBlock>
+                                            </ListViewHeaderItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="玄幻" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img1" Source="Assets/玄幻.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="玄幻" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="奇幻" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img2" Source="Assets/奇幻.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="奇幻" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="武侠" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img3" Source="Assets/武侠.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="武侠" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="仙侠" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img4" Source="Assets/仙侠.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="仙侠" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="都市" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img5" Source="Assets/都市.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="都市" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="职场" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img6"  Source="Assets/职场.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="职场" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="历史" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image  x:Name="img7"  Source="Assets/历史.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="历史" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="军事" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img8" Source="Assets/军事.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="军事" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="游戏" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img9" Source="Assets/游戏.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="游戏" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="竞技" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img10" Source="Assets/竞技.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="竞技" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="科幻" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img11" Source="Assets/科幻.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="科幻" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="灵异" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img12" Source="Assets/灵异.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="灵异" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="同人" HorizontalAlignment="Center" Width="150" Height="100" Click="maleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img13" Source="Assets/同人.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="同人" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                        </ListView>
+                                    </Grid>
+                                    <Grid x:Name="femaleGrid" Grid.Column="1" Margin="5">
+                                        <ListView>
+                                            <ListViewHeaderItem Background="LightSkyBlue" HorizontalAlignment="Center">
+                                                <TextBlock Text="女生"/>
+                                            </ListViewHeaderItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="古代言情" HorizontalAlignment="Center" Width="150" Height="100" Click="femaleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img14" Source="Assets/古代言情.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="古代言情" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="现代言情" HorizontalAlignment="Center" Width="150" Height="100" Click="femaleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img15" Source="Assets/现代言情.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="现代言情" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="纯爱" HorizontalAlignment="Center" Width="150" Height="100" Click="femaleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img16" Source="Assets/纯爱.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="纯爱" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="玄幻奇幻" HorizontalAlignment="Center" Width="150" Height="100" Click="femaleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img17" Source="Assets/玄幻奇幻.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="玄幻奇幻" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="武侠仙侠" HorizontalAlignment="Center" Width="150" Height="100" Click="femaleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img18" Source="Assets/武侠仙侠.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="武侠仙侠" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                    <Button Name="悬疑灵异" HorizontalAlignment="Center" Width="150" Height="100" Click="femaleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img19" Source="Assets/悬疑灵异.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="悬疑灵异" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                            <ListViewItem>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Name="同人f" HorizontalAlignment="Center" Width="150" Height="100" Click="femaleMajor_Click" Background="White">
+                                                        <StackPanel>
+                                                            <Image x:Name="img20" Source="Assets/同人f.jpg" Width="60" Height="60"/>
+                                                            <TextBlock Text="同人" HorizontalAlignment="Center"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </ListViewItem>
+                                        </ListView>
+                                    </Grid>
+                                </Grid>
+                            </Viewbox>
+                        </Grid>
+                    </ScrollViewer>
+                </SplitView.Content>
+            </SplitView>
+            <AppBarToggleButton x:Name="splitViewToggle" VerticalAlignment="Top" Width="48" Height="48" Icon="GlobalNavigationButton"/>
+        </Grid>
+    </Grid>
+</Page>

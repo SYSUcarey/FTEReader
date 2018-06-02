@@ -1,0 +1,4 @@
+"/t:FTEReader.WebRequest.BookDetailObject,FTEReader,json"
+"/t:FTEReader.WebRequest.ChapterObject,FTEReader,json"
+"/t:FTEReader.WebRequest.ChapterDetailObject,FTEReader,json"
+"/t:FTEReader.WebRequest.BooksObject,FTEReader,json"

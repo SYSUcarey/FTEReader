@@ -1,0 +1,1 @@
+F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\FTEReader.csproj;x86

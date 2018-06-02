@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tile>
+  <visual>
+
+    <binding template="TileSmall" hint-textStacking="center">
+      <text hint-align="center" hint-style="body">bookname</text>
+      <image name="background" src="Assets/Parchment.jpg" placement="background"/>
+    </binding>
+
+    <binding template="TileMedium">
+      <image name="background" src="Assets/Parchment.jpg" placement="background"/>
+      <text hint-align="left">bookname</text>
+      <text hint-align="left">阅读页数:</text>
+      <text hint-align="center" hint-style="body">currentPage</text>
+    </binding>
+
+    <binding template="TileWide">
+      <text hint-align="left" hint-style="body">bookname</text>
+      <text hint-align="center">阅读页数:</text>
+      <text hint-align="center">currentPage</text>
+      <image name="background" src="Assets/Parchment.jpg" placement="background"/>
+      <image name="ItemIcon" src="Assets/productIcon.png" hint-removeMargin="true"/>     
+    </binding>
+  </visual>
+</tile>
