@@ -76,7 +76,7 @@ namespace FTEReader
             {
                 chapters.ChapterItems.Clear();
                 title = book[1];
-                Debug.WriteLine(title);
+                //Debug.WriteLine(title);
                 pages = book[2];
                 id = book[3];
                 StorageFolder localFolder = ApplicationData.Current.LocalFolder;

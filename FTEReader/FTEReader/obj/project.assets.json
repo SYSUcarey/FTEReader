@@ -25745,11 +25745,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chenbb\\Desktop\\FTEReader3.0\\FTEReader\\FTEReader\\FTEReader.csproj",
+      "projectUniqueName": "F:\\FTEReader\\FTEReader\\FTEReader\\FTEReader.csproj",
       "projectName": "FTEReader",
-      "projectPath": "C:\\Users\\chenbb\\Desktop\\FTEReader3.0\\FTEReader\\FTEReader\\FTEReader.csproj",
+      "projectPath": "F:\\FTEReader\\FTEReader\\FTEReader\\FTEReader.csproj",
       "packagesPath": "C:\\Users\\chenbb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chenbb\\Desktop\\FTEReader3.0\\FTEReader\\FTEReader\\obj\\",
+      "outputPath": "F:\\FTEReader\\FTEReader\\FTEReader\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

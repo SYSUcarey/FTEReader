@@ -35,13 +35,13 @@
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
     <build:Item Name="VisualStudio" Version="15.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2017" />
-    <build:Item Name="OperatingSystem" Version="10.0.17134.103 (WinBuild.160101.0800)" />
+    <build:Item Name="OperatingSystem" Version="10.0.17134.161 (WinBuild.160101.0800)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="15.0.27428.2005" />
     <build:Item Name="ProjectGUID" Value="{FBF83A5C-E64A-45A8-B3F5-E001E6D48F41}" />
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="Managed" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="15.0.27428.2005" />
-    <build:Item Name="SQLite.UWP.2015" Version="3.23.1" />
+    <build:Item Name="SQLite.UWP.2015" Version="3.24.0" />
     <build:Item Name="MakePri.exe" Version="10.0.16299.15 (WinBuild.160101.0800)" />
   </build:Metadata>
 </Package>

@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>0cdd6de0-047b-4c5d-94aa-5af6433a74ef</PackageIdentityName>
     <PackageIdentityPublisher>CN=lenovo</PackageIdentityPublisher>
-    <IntermediateOutputPath>F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>F:\FTEReader\FTEReader\FTEReader\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>6F01EECBCC07BB79F1CCF8DD0EFD23CB4B969F8FC4D8DA918ED64A8601CC9F54</RegisteredManifestChecksum>
+    <LayoutDir>F:\FTEReader\FTEReader\FTEReader\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>4BD232D81BF73E2A1908222FFD2FCB26A35D356D144B8C789325645D38978197</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>0cdd6de0-047b-4c5d-94aa-5af6433a74ef_1.0.0.0_x86__awb217f4mgzj4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0cdd6de0-047b-4c5d-94aa-5af6433a74ef_awb217f4mgzj4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0cdd6de0-047b-4c5d-94aa-5af6433a74ef</RegisteredPackageID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="F:\FTEReader\FTEReader\FTEReader\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-06-02T02:44:43.608</Modified>
+      <Modified>2018-07-05T06:50:03.652</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\bin\x86\Debug\FTEReader.exe">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\bin\x86\Debug\FTEReader.exe">
       <PackagePath>entrypoint\FTEReader.exe</PackagePath>
-      <Modified>2018-06-02T02:44:40.846</Modified>
+      <Modified>2018-07-05T06:50:02.708</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -499,227 +499,227 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T14:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.23.1\Redist\Debug\x86\sqlite3.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UAP\v0.8.0.0\ExtensionSDKs\SQLite.UWP.2015\3.24.0\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
-      <Modified>2018-04-17T16:28:06.856</Modified>
+      <Modified>2018-06-06T01:50:26.407</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\chenbb\.nuget\packages\sqlitepcl\3.8.7.2\build\netcore451\SQLitePCL.Ext.dll">
       <PackagePath>SQLitePCL.Ext.dll</PackagePath>
       <Modified>2014-12-09T03:04:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\default_book.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\default_book.png">
       <PackagePath>Assets\default_book.png</PackagePath>
       <Modified>2018-06-01T11:24:18.422</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\productIcon.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\productIcon.png">
       <PackagePath>Assets\productIcon.png</PackagePath>
       <Modified>2018-06-01T12:05:42.487</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:12:06.123</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.480</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:12:05.622</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.502</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:12:05.590</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.319</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.scale-125.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.344</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.scale-150.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.363</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:12:05.542</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.411</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-24.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.421</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:12:05.579</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-32.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.432</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:12:05.553</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
       <Modified>2018-03-08T14:30:06.821</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:12:05.730</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-03-08T14:30:06.821</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:12:05.524</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-06-01T12:10:18.491</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-03-08T14:30:06.821</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-03-08T14:30:06.821</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\Parchment.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\Parchment.jpg">
       <PackagePath>Assets\Parchment.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.434</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\人物传记.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\人物传记.jpg">
       <PackagePath>Assets\人物传记.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.538</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\仙侠.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\仙侠.jpg">
       <PackagePath>Assets\仙侠.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.588</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\军事.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\军事.jpg">
       <PackagePath>Assets\军事.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.488</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\历史.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\历史.jpg">
       <PackagePath>Assets\历史.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.508</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\古代言情.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\古代言情.jpg">
       <PackagePath>Assets\古代言情.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.467</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\同人.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\同人.jpg">
       <PackagePath>Assets\同人.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.547</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\同人f.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\同人f.jpg">
       <PackagePath>Assets\同人f.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.557</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\哲学.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\哲学.jpg">
       <PackagePath>Assets\哲学.jpg</PackagePath>
       <Modified>2018-06-01T11:25:01.281</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\奇幻.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\奇幻.jpg">
       <PackagePath>Assets\奇幻.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.528</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\悬疑灵异.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\悬疑灵异.jpg">
       <PackagePath>Assets\悬疑灵异.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.628</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\武侠.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\武侠.jpg">
       <PackagePath>Assets\武侠.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.567</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\武侠仙侠.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\武侠仙侠.jpg">
       <PackagePath>Assets\武侠仙侠.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.577</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\游戏.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\游戏.jpg">
       <PackagePath>Assets\游戏.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.640</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\灵异.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\灵异.jpg">
       <PackagePath>Assets\灵异.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.518</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\玄幻.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\玄幻.jpg">
       <PackagePath>Assets\玄幻.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.609</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\玄幻奇幻.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\玄幻奇幻.jpg">
       <PackagePath>Assets\玄幻奇幻.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.618</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\现代言情.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\现代言情.jpg">
       <PackagePath>Assets\现代言情.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.598</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\科幻.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\科幻.jpg">
       <PackagePath>Assets\科幻.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.498</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\竞技.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\竞技.jpg">
       <PackagePath>Assets\竞技.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.478</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\纯爱.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\纯爱.jpg">
       <PackagePath>Assets\纯爱.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.445</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\职场.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\职场.jpg">
       <PackagePath>Assets\职场.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.656</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Assets\都市.jpg">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Assets\都市.jpg">
       <PackagePath>Assets\都市.jpg</PackagePath>
       <Modified>2018-06-01T11:24:18.456</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2018-06-01T11:10:37.851</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\Tile\Tile.xml">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\Tile\Tile.xml">
       <PackagePath>Tile\Tile.xml</PackagePath>
       <Modified>2018-06-01T12:04:40.216</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\bin\x86\Debug\FTEReader.xr.xml">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\bin\x86\Debug\FTEReader.xr.xml">
       <PackagePath>FTEReader.xr.xml</PackagePath>
       <Modified>2018-06-01T14:43:54.341</Modified>
     </AppxPackagedFile>
@@ -727,14 +727,14 @@
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-09-28T09:28:16.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-06-02T02:44:42.925</Modified>
+      <Modified>2018-07-05T01:38:45.173</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\FTEReader\FTEReader2.0\FTEReader\FTEReader\bin\x86\Debug\Core\FTEReader.exe">
+    <AppxPackagedFile Include="F:\FTEReader\FTEReader\FTEReader\bin\x86\Debug\Core\FTEReader.exe">
       <PackagePath>FTEReader.exe</PackagePath>
-      <Modified>2018-06-02T02:44:43.596</Modified>
+      <Modified>2018-07-05T06:50:03.645</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
